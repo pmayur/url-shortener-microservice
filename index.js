@@ -5,13 +5,11 @@ const bodyParser  = require('body-parser');
 const app         = module.exports = express()
 const port        = process.env.PORT || 3000
 
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.use('/shorten', require('./controllers/shorten'));
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use('/api/shorten', require('./controllers/shorten'));
 
 app.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
