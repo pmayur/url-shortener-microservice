@@ -1,8 +1,13 @@
 const express = require('express')
                 require('dotenv').config()
 
-const app   = express()
-const port  = process.env.PORT || 3000
+const bodyParser  = require('body-parser');
+const app         = module.exports = express()
+const port        = process.env.PORT || 3000
+
+app.use(bodyParser.urlencoded());
+
+app.use('/shorten', require('./controllers/shorten'));
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
