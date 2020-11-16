@@ -42,6 +42,8 @@ app.use(bodyParser.urlencoded({
 
 // API's
 app.use('/api/shorten', require('./controllers/shorten'));
+app.use('/', require('./controllers/visit'));
+
 
 // starter express server on port
 app.listen(port, () => {
