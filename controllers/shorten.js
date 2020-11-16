@@ -1,12 +1,11 @@
-const express = require('express');
-const helper = require('../util/helper')
-const shorten = express.Router();
-
+const express       = require('express');
+const helper        = require('../util/helper')
 const ShortUrlModel = require('../models/ShortUrl')
+
+const shorten = express.Router();
 
 shorten.post('/', function(req, res) {
     const url = req.body.url;
-    const isUrl = helper.checkIfUrl(url);
     const newId = helper.makeId();
 
     let newUrl = {
