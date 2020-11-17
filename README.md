@@ -23,7 +23,7 @@ Server is live and listening to POST requests at
 https://url-tinyfy.herokuapp.com/api/shorten
 ```
 The body of the POST request must contain
-```json
+```
 {
    url: "https://url.to/shorten"
 }
